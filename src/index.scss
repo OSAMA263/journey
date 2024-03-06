@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  button,
+  input,
+  textarea,
+  img,
+  svg,
+  a {
+    transition: all 0.5s;
+  }
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
+  p {
+    color: "#9ea0a9";
+  }
+  // END OF GLOBAL STYLES
+}
