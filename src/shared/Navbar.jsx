@@ -1,0 +1,72 @@
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import tw from "tailwind-styled-components";
+
+export default function Navbar() {
+  const [headerOpacity, setHeaderOpacity] = useState("bg-opacity-100");
+  
+  useEffect(() => {
+    const headerBgc = window.addEventListener("scroll", () => {
+      setHeaderOpacity(window.scrollY >= 60 ? "bg-opacity-50" : "bg-opacity-100");
+    });
+    return window.removeEventListener("scroll", headerBgc);
+  }, []);
+
+  return (
+    <Header className={headerOpacity}>
+      <Nav>
+        logo
+        <UL>
+          {nav_links.map(({ title, url }) => (
+            <li key={title}>
+              <NavLink to={url}>{title}</NavLink>
+            </li>
+          ))}
+          <li>
+            <button>dropdown</button>
+          </li>
+        </UL>
+        <div className="flex items-center gap-x-6">
+          <h6>cart</h6>
+          <button className="px-4 py-2 hover:bg-light-gray rounded-3xl">
+            Login
+          </button>
+          <button className="px-4 py-2 yellow-border-btn">Get Started</button>
+        </div>
+      </Nav>
+    </Header>
+  );
+}
+const UL = tw.ul`
+flex
+items-center
+gap-x-8
+[&>li:hover]:text-yellow-color
+[&>li]:cursor-pointer
+text-lg
+`;
+
+const Nav = tw.nav`
+w-[65%]
+mx-auto
+flex
+items-center
+justify-between
+`;
+
+const Header = tw.header`
+bg-black
+py-3
+w-full
+fixed
+transition-all
+duration-700
+z-[6969]
+backdrop-blur-sm
+`;
+
+const nav_links = [
+  { title: "Features", url: "" },
+  { title: "Pricing", url: "" },
+  { title: "Blog", url: "" },
+];
