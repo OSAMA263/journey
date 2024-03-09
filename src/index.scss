@@ -45,6 +45,11 @@ body {
     font-size: 18px;
     letter-spacing: 1.5px;
   }
+
+}
+.swiper-wrapper{
+  transition-timing-function: linear!important;
+  align-items: center!important;
 }
 // END OF GLOBAL STYLES
 .yellow-border-btn {
@@ -88,7 +93,7 @@ body {
   &::before {
     content: "";
     position: absolute;
-    width: 50px;
+    width: 15%;
     height: 100%;
     left: 0;
     background-image: linear-gradient(to right, $black-color, transparent);
@@ -97,7 +102,7 @@ body {
   &::after {
     content: "";
     position: absolute;
-    width: 50px;
+    width: 15%;
     height: 100%;
     right: 0;
     top: 0;

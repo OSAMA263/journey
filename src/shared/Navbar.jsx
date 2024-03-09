@@ -66,7 +66,7 @@ backdrop-blur-sm
 `;
 
 const nav_links = [
-  { title: "Features", url: "" },
-  { title: "Pricing", url: "" },
-  { title: "Blog", url: "" },
+  { title: "Features", url: "/features" },
+  { title: "Pricing", url: "/pricing" },
+  { title: "Contact", url: "/Contact" },
 ];

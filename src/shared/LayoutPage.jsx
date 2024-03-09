@@ -1,7 +1,13 @@
 import React from 'react'
+import tw from 'tailwind-styled-components'
 
-export default function LayoutPage({children}) {
+export default function LayoutPage({children,className}) {
   return (
-    <div className='w-[65%] mx-auto'>{children}</div>
+    <Wrapper className={className??""}>{children}</Wrapper>
   )
 }
+
+const Wrapper=tw.div`
+w-[65%]
+mx-auto
+`

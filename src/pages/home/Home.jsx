@@ -9,19 +9,24 @@ import {
 } from "@chakra-ui/react";
 import { threeCols, fourGrid, accordion, checkList } from "./data";
 import { PiCaretUpDuotone } from "react-icons/pi";
-import GlowingBg from "../../shared/GlowingBg";
+import GlowingBg from "../../components/GlowingBg";
 import CardFeature from "../../components/CardFeature";
 import dashboardImg from "/home/dashboard.webp";
 import accordionImg from "/home/accordion image.webp";
 import pieChartImg from "/home/pie chart.webp";
 import trafficChartImg from "/home/traffic chart.webp";
 import AutoSlider from "../../components/AutoSlider";
+import { SectionHeader } from "../../components/SectionHeader";
 
 export default function Home() {
   return (
     <LayoutPage>
       {/* HERO SECTION */}
-      <GlowingBg glowing="!top-0" className="h-dvh flex flex-col">
+      <GlowingBg
+        glowing="!top-0"
+        overflowHidden
+        className="h-dvh flex flex-col"
+      >
         <SectionGrid className="grid-cols-[1.25fr_1fr] my-0 bg-dots">
           <div className="space-y-2">
             <button className="px-4 py-1 border border-light-gray hover:shadow-[0px_0px_5px_1px_white] rounded-3xl">
@@ -60,14 +65,14 @@ export default function Home() {
           </div>
         </SectionGrid>
         {/* AUTO SLIDER LOGOS */}
-        <AutoSlider/>
+        <AutoSlider />
       </GlowingBg>
       {/* THREE COLUMNS SECTION */}
       <SectionGrid className="space-y-16 flex flex-col text-center">
-        <SectionTitle
+        <SectionHeader
           largeTitle="Advanced Workflows for faster Turn Around Times"
           smallTitle="Core Features"
-          styles="w-[80%] mx-auto"
+          className="w-[80%] mx-auto"
         />
         <GlowingBg
           glowing="!bg-opacity-35"
@@ -83,7 +88,7 @@ export default function Home() {
       {/* FOURS CARDFeatureS GRID SECTION */}
       <SectionGrid className="grid-cols-[1.25fr_1fr]">
         <div>
-          <SectionTitle
+          <SectionHeader
             smallTitle="Features"
             largeTitle="AI Driven Statistics"
           />
@@ -103,7 +108,7 @@ export default function Home() {
         <TwoImages bl bigImg={accordionImg} smallImg={trafficChartImg} />
         {/*  */}
         <div className="space-y-8">
-          <SectionTitle
+          <SectionHeader
             smallTitle="Features"
             largeTitle="Deliver great Results - Always!"
           />
@@ -114,7 +119,10 @@ export default function Home() {
       {/* CHESK MARK LIST SECTION */}
       <SectionGrid className="grid-cols-[1.25fr_1fr]">
         <div className="space-y-1">
-          <SectionTitle smallTitle="Features" largeTitle="Detailed Analytics" />
+          <SectionHeader
+            smallTitle="Features"
+            largeTitle="Detailed Analytics"
+          />
           <div className="!mt-10 space-y-2">
             {checkList.map(({ icon, title }, i) => (
               <SlideElement className="flex gap-x-2" i={i} key={i}>
@@ -174,27 +182,6 @@ const Accordions = () => {
         </SlideElement>
       ))}
     </Accordion>
-  );
-};
-const SectionTitle = (props) => {
-  const { largeTitle, smallTitle, styles } = props;
-
-  return (
-    <div className={`${styles ?? ""} space-y-1`}>
-      <SlideElement>
-        <h6 className="text-yellow-color">{smallTitle}</h6>
-      </SlideElement>
-      <SlideElement>
-        <h1>{largeTitle}</h1>
-      </SlideElement>
-      <SlideElement>
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
-          temporibus ipsum porro quidem laborum harum esse consequuntur quo
-          ipsam eum.
-        </p>
-      </SlideElement>
-    </div>
   );
 };
 const TwoBtnsGroup = () => {
