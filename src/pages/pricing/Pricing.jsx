@@ -48,7 +48,7 @@ export const PricingSection = () => {
         </SlideElement>
         {/* cards */}
         <div className="grid grid-cols-3 gap-16">
-          <AnimatePresence key={featurePlan} mode="wait">
+          <AnimatePresence key={featurePlan}>
             {prices_cards.map((data, i) => (
               <SlideElement y="10%" i={i} key={i}>
                 <Card {...{ featurePlan, data }} />
@@ -65,9 +65,6 @@ const Card = ({ data, featurePlan }) => {
   const { title, price, description, features } = data;
   return (
     <CardContainer
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
     >
       <div>
         <h6>{title}</h6>
@@ -103,11 +100,11 @@ const Table = () => {
     { title: "titlte", cell1: false, cell2: false, cell3: "check" },
   ];
 
-  !isNaN(featuress[2].cell1)
-    ? console.log(featuress[2].cell1)
-    : featuress[2].cell1 === "check"
-    ? console.log(featuress[2].cell1)
-    : console.log(featuress[2].cell1);
+  // !isNaN(featuress[2].cell1)
+  //   ? console.log(featuress[2].cell1)
+  //   : featuress[2].cell1 === "check"
+  //   ? console.log(featuress[2].cell1)
+  //   : console.log(featuress[2].cell1);
   return (
     <TableContainer>
       <SectionHeader
@@ -117,7 +114,7 @@ const Table = () => {
       />
       {/* GRID TABLE */}
       <div className="mt-20">
-        <GridTable className="sticky top-0 bg-light-gray">
+        <GridTable className="sticky top-0 bg-black-color">
           <div></div>
           {prices_cards.map(({ title, description, price }, i) => (
             <div className="p-6" key={i}>
@@ -185,7 +182,7 @@ p-1
 -z-10
 `;
 
-const CardContainer = tw(motion.div)`
+const CardContainer = tw.div`
 rounded-2xl 
 border
 border-light-gray
