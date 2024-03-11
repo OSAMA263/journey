@@ -23,7 +23,7 @@ export default function Home() {
     <LayoutPage>
       {/* HERO SECTION */}
       <GlowingBg
-        glowing="!top-0"
+        glowing="!-top-[30%]"
         overflowHidden
         className="h-dvh flex flex-col"
       >
@@ -68,7 +68,7 @@ export default function Home() {
         <AutoSlider />
       </GlowingBg>
       {/* THREE COLUMNS SECTION */}
-      <SectionGrid className="space-y-16 flex flex-col text-center">
+      <SectionGrid className="space-y-16 text-center">
         <SectionHeader
           largeTitle="Advanced Workflows for faster Turn Around Times"
           smallTitle="Core Features"
@@ -198,7 +198,7 @@ const TwoImages = (props) => {
   const { bigImg, smallImg, br = "", bl = "" } = props;
   return (
     <GlowingBg
-      glowing="!-top-1/2 !w-[100%] !blur-[60px] !h-[100%]"
+      glowing="!w-[100%] !blur-[90px] !h-[100%]"
       className="relative w-[90%]"
     >
       <SlideElement className="h-full rounded-2xl overflow-hidden">

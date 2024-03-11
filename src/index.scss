@@ -37,22 +37,25 @@ body {
   h6 {
     font-weight: 600;
   }
-  p {
-    color: #9ea0a9;
+  h6 {
+    color: $yellow-color;
+  }
+  p,
+  span {
+    color: $gray-color;
     font-size: 18px;
   }
   h6 {
     font-size: 18px;
     letter-spacing: 1.5px;
   }
-
 }
-.swiper-wrapper{
-  transition-timing-function: linear!important;
-  align-items: center!important;
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+  align-items: center !important;
 }
 // END OF GLOBAL STYLES
-.yellow-border-btn {
+.glowing-btn {
   border: 1px solid $light-yellow;
   border-radius: 24px;
   background-image: linear-gradient(to right, $black-color, $light-yellow);
@@ -61,6 +64,7 @@ body {
     box-shadow: 0 0 25px 1px $light-yellow;
   }
 }
+// END OF GLOBAL CLASSES
 .bg-dots {
   position: relative;
   &::before {
@@ -110,4 +114,25 @@ body {
     z-index: 10;
   }
 }
-// END OF GLOBAL CLASSES
+// END OF HOME STYLES
+.toggle-plan-btns {
+  padding: 10px;
+  border-radius: 6969px;
+  display: flex;
+  column-gap: 10px;
+  width: fit-content;
+  background-color: $black-color;
+  border: 1px solid #393940;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+  div {
+    position: relative;
+    z-index: 69;
+    button {
+      border-radius: 6969px;
+      padding: 12px 20px;
+    }
+  }
+}
+// END OF PRICING STYLES

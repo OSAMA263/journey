@@ -5,7 +5,8 @@ import {
   PiMagicWand,
   PiUsersThree,
   PiListMagnifyingGlass,
-  PiChats,PiCheckCircle
+  PiChats,
+  PiCheckCircle,
 } from "react-icons/pi";
 
 const threeCols = [
@@ -29,4 +30,4 @@ const checkList = [
   { icon: <PiCheckCircle />, title: "Extensive Dashboard" },
   { icon: <PiCheckCircle />, title: "All-in-One Marketing Solution" },
 ];
-export { threeCols, fourGrid, accordion,checkList };
+export { threeCols, fourGrid, accordion, checkList };
