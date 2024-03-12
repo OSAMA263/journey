@@ -14,6 +14,7 @@ export default function AutoSlider() {
   const swiperProps = {
     slidesPerView: 5,
     spaceBetween: 30,
+    allowTouchMove: false,
     centeredSlides: true,
     loop: true,
     speed: 2500,
@@ -50,4 +51,3 @@ export default function AutoSlider() {
     </SlideElement>
   );
 }
-

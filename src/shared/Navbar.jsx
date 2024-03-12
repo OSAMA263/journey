@@ -7,7 +7,7 @@ export default function Navbar() {
   
   useEffect(() => {
     const headerBgc = window.addEventListener("scroll", () => {
-      setHeaderOpacity(window.scrollY >= 60 ? "bg-opacity-50" : "bg-opacity-100");
+      setHeaderOpacity(window.scrollY >= 60 ? "bg-opacity-50 py-3" : "");
     });
     return window.removeEventListener("scroll", headerBgc);
   }, []);
@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <Header className={headerOpacity}>
       <Nav>
-        logo
+        <NavLink to="/">logo</NavLink>
         <UL>
           {nav_links.map(({ title, url }) => (
             <li key={title}>
@@ -28,10 +28,10 @@ export default function Navbar() {
         </UL>
         <div className="flex items-center gap-x-6">
           <h6>cart</h6>
-          <button className="px-4 py-2 hover:bg-light-gray rounded-3xl">
+          <button className="px-4 py-2 hover:bg-light-gray rounded-full">
             Login
           </button>
-          <button className="px-4 py-2 yellow-border-btn">Get Started</button>
+          <button className="px-4 py-2 glowing-btn">Get Started</button>
         </div>
       </Nav>
     </Header>
@@ -56,13 +56,14 @@ justify-between
 
 const Header = tw.header`
 bg-black
-py-3
+py-6
 w-full
 fixed
 transition-all
 duration-700
 z-[6969]
 backdrop-blur-sm
+font-semibold
 `;
 
 const nav_links = [

@@ -1,26 +1,31 @@
 import tw from "tailwind-styled-components";
 
-export default function CardFeature({ border, data }) {
+export default function CardFeature(props) {
+  const { border, data, children, className } = props;
   return (
-    <Container $border={border}>
-      <div className="space-y-6 text-start text-lg font-semibold">
+    <Container className={className} $border={border}>
+      <div className="px-10 py-14 space-y-6 text-start text-lg font-semibold">
         <div className="p-5 border border-light-gray rounded-2xl w-fit">
           <span className="text-3xl text-yellow-color ">{data.icon}</span>
         </div>
         <div className="space-y-1">
           <h3>{data.title}</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-            pariatur ducimus
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
+            expedita error cupiditate non odit? Quasi!
           </p>
         </div>
       </div>
+      {children}
     </Container>
   );
 }
 const Container = tw.div`
 ${({ $border }) =>
   $border
-    ? "border rounded-2xl px-10 py-20 hover:border-yellow-color bg-black-color bg-opacity-25 cursor-pointer border-light-gray border-opacity-50 transition-all duration-500"
+    ? "border rounded-2xl hover:border-yellow-color bg-black-color bg-opacity-25 cursor-pointer border-light-gray border-opacity-50 transition-all duration-500"
     : ""}
+    w-full
+    h-full
+    overflow-hidden
 `;

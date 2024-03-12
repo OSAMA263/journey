@@ -36,11 +36,112 @@ const prices_cards = [
     ],
   },
 ];
-//  const table=[
-//   {title:"",features:[
-//     {featurTitle:""}
-//   ]},
-//   {},
-//   {},
-//  ]
-export { prices_cards };
+const features = [
+  {
+    title: "Core Services",
+    featuresInfo: [
+      {
+        featureTitle: "Feature Title Text",
+        cell1: 10,
+        cell2: 100,
+        cell3: "unlimited",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: "check",
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: false,
+        cell3: "check",
+      },
+    ],
+  },
+  {
+    title: "Analytics",
+    featuresInfo: [
+      {
+        featureTitle: "Feature Title Text",
+        cell1: 10,
+        cell2: 100,
+        cell3: "unlimited",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: "check",
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: false,
+        cell3: "check",
+      },
+    ],
+  },
+  {
+    title: "Customizability",
+    featuresInfo: [
+      {
+        featureTitle: "Feature Title Text",
+        cell1: 10,
+        cell2: 100,
+        cell3: "unlimited",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: "check",
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: "check",
+        cell3: "check",
+      },
+      {
+        featureTitle: "Feature Title Text",
+        cell1: false,
+        cell2: false,
+        cell3: "check",
+      },
+    ],
+  },
+];
+
+export { prices_cards,features };

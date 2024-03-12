@@ -26,9 +26,10 @@ function App() {
     </>
   );
 }
+export default App;
+
 const About = lazy(() => import("./pages/about/About"));
 // const Blog = lazy(() => import("./pages/blog/Blog"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
 const Pricing = lazy(() => import("./pages/pricing/Pricing"));
 const Features = lazy(() => import("./pages/features/Features"));
-export default App;

@@ -12,11 +12,12 @@ import { PiCaretUpDuotone } from "react-icons/pi";
 import GlowingBg from "../../components/GlowingBg";
 import CardFeature from "../../components/CardFeature";
 import dashboardImg from "/home/dashboard.webp";
-import accordionImg from "/home/accordion image.webp";
 import pieChartImg from "/home/pie chart.webp";
+import accordionImg from "/home/accordion image.webp";
 import trafficChartImg from "/home/traffic chart.webp";
 import AutoSlider from "../../components/AutoSlider";
 import { SectionHeader } from "../../components/SectionHeader";
+import TwoImages from "../../components/TwoImages";
 
 export default function Home() {
   return (
@@ -187,38 +188,15 @@ const Accordions = () => {
 const TwoBtnsGroup = () => {
   return (
     <div className="flex !mt-12 gap-x-6 font-semibold">
-      <button className="px-8 py-3 yellow-border-btn">Get Started</button>
+      <button className="px-8 py-3 glowing-btn">Get Started</button>
       <button className="px-8 py-3 rounded-3xl hover:bg-light-gray">
         Learn More
       </button>
     </div>
   );
 };
-const TwoImages = (props) => {
-  const { bigImg, smallImg, br = "", bl = "" } = props;
-  return (
-    <GlowingBg
-      glowing="!w-[100%] !blur-[90px] !h-[100%]"
-      className="relative w-[90%]"
-    >
-      <SlideElement className="h-full rounded-2xl overflow-hidden">
-        <img className="h-full w-full" src={bigImg} alt={bigImg} />
-      </SlideElement>
-      <SlideElement
-        className={`absolute -bottom-[10%] w-1/2 h-1/2 rounded-2xl overflow-hidden ${
-          br ? "-right-[10%]" : bl && "-left-[10%]"
-        }`}
-      >
-        <img
-          src={smallImg}
-          className="w-full h-full object-contain"
-          alt={smallImg}
-        />
-      </SlideElement>
-    </GlowingBg>
-  );
-};
-const SectionGrid = tw.div`
+
+export const SectionGrid = tw.div`
 grid
 gap-x-16
 items-center
