@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import tw from "tailwind-styled-components";
+import MainBtn from "../components/MainBtn";
 
 export default function Navbar() {
   const [headerOpacity, setHeaderOpacity] = useState("bg-opacity-100");
@@ -27,11 +28,10 @@ export default function Navbar() {
           </li>
         </UL>
         <div className="flex items-center gap-x-6">
-          <h6>cart</h6>
-          <button className="px-4 py-2 hover:bg-light-gray rounded-full">
+          <button className="px-6 py-2 hover:bg-light-gray rounded-full">
             Login
           </button>
-          <button className="px-4 py-2 glowing-btn">Get Started</button>
+          <MainBtn/>
         </div>
       </Nav>
     </Header>

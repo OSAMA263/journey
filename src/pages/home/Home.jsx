@@ -1,14 +1,7 @@
 import SlideElement from "../../shared/SlideElement";
 import LayoutPage from "../../shared/LayoutPage";
 import tw from "tailwind-styled-components";
-import {
-  Accordion,
-  AccordionButton,
-  AccordionItem,
-  AccordionPanel,
-} from "@chakra-ui/react";
 import { threeCols, fourGrid, accordion, checkList } from "./data";
-import { PiCaretUpDuotone } from "react-icons/pi";
 import GlowingBg from "../../components/GlowingBg";
 import CardFeature from "../../components/CardFeature";
 import dashboardImg from "/home/dashboard.webp";
@@ -18,6 +11,12 @@ import trafficChartImg from "/home/traffic chart.webp";
 import AutoSlider from "../../components/AutoSlider";
 import { SectionHeader } from "../../components/SectionHeader";
 import TwoImages from "../../components/TwoImages";
+import Accordions from "../../components/Accordions";
+import FAQS from "../../components/FAQS";
+import MainBtn from "../../components/MainBtn";
+import Testimonial from "../../components/Testimonial";
+import GetStarted from "../../components/GetStarted";
+import PricingSection from "../../components/PricingSection"
 
 export default function Home() {
   return (
@@ -50,17 +49,17 @@ export default function Home() {
               <img
                 src="/home/home hero.webp"
                 className="z-10 relative"
-                alt=""
+                alt="hero"
               />
               <img
                 src="/home/home shape1.svg"
                 className="absolute top-full -translate-y-1/2 right-full translate-x-1/2"
-                alt=""
+                alt="shape1"
               />
               <img
                 src="/home/home shape2.svg"
                 className="absolute bottom-full translate-y-1/2 left-full -translate-x-1/2"
-                alt=""
+                alt="shape2"
               />
             </div>
           </div>
@@ -113,7 +112,7 @@ export default function Home() {
             smallTitle="Features"
             largeTitle="Deliver great Results - Always!"
           />
-          <Accordions />
+          <Accordions data={accordion} />
           <TwoBtnsGroup />
         </div>
       </SectionGrid>
@@ -136,70 +135,36 @@ export default function Home() {
         {/*   */}
         <TwoImages br bigImg={dashboardImg} smallImg={trafficChartImg} />
       </SectionGrid>
+      {/*  */}
+      <GetStarted/>
+      <PricingSection/>
+      <Testimonial/>
+      <FAQS />
     </LayoutPage>
   );
 }
 
-const Accordions = () => {
-  return (
-    <Accordion allowToggle className="space-y-6">
-      {accordion.map(({ icon, title }, i) => (
-        <SlideElement key={i}>
-          <AccordionItem border="none">
-            {({ isExpanded }) => (
-              <AccordionButton
-                border={"1px solid #404041"}
-                textAlign={"start"}
-                flexDir={"column"}
-                transitionDuration={1}
-                borderRadius={24}
-                _expanded={{ borderColor: "#f8f858" }}
-                _hover={{ borderColor: "#f8f858" }}
-                p={6}
-              >
-                <div className="flex justify-between w-full text-2xl">
-                  <h4 className="flex gap-x-4">
-                    <span className="text-yellow-color">{icon} </span>
-                    {title}
-                  </h4>
-
-                  <span
-                    className={`${
-                      isExpanded ? "-rotate-180" : "rotate-0"
-                    } translate-all duration-500`}
-                  >
-                    <PiCaretUpDuotone />
-                  </span>
-                </div>
-                <AccordionPanel p={0} pt={8}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                    odit reiciendis, iure totam sunt aut doloribus.
-                  </p>
-                </AccordionPanel>
-              </AccordionButton>
-            )}
-          </AccordionItem>
-        </SlideElement>
-      ))}
-    </Accordion>
-  );
-};
 const TwoBtnsGroup = () => {
   return (
-    <div className="flex !mt-12 gap-x-6 font-semibold">
-      <button className="px-8 py-3 glowing-btn">Get Started</button>
-      <button className="px-8 py-3 rounded-3xl hover:bg-light-gray">
+    <TwoBtnsContainer>
+      <MainBtn />
+      <button className="px-6 py-2 rounded-3xl hover:bg-light-gray">
         Learn More
       </button>
-    </div>
+    </TwoBtnsContainer>
   );
 };
 
+const TwoBtnsContainer = tw.div`
+flex
+font-semibold
+!mt-12
+gap-x-6
+[&_button]:text-lg
+`;
 export const SectionGrid = tw.div`
 grid
 gap-x-16
 items-center
-my-64
 h-full
 `;

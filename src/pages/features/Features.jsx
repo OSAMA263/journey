@@ -15,7 +15,7 @@ import SlideElement from "../../shared/SlideElement";
 export default function Features() {
   return (
     <LayoutPage>
-      <GlowingBg glowing="!-top-0" className="py-40 text-center flex flex-col">
+      <GlowingBg glowing="!-top-0" className="pt-40 text-center flex flex-col">
         <SectionHeader
           smallTitle="Features"
           largeTitle="Boost your Productivity & drive more Sales"

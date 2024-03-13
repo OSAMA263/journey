@@ -11,11 +11,11 @@ export default function PricingSection({ glowing }) {
   const [featurePlan, setFeaturePlan] = useState("monthly");
   const plans = ["monthly", "yearly"];
   return (
-    <>
+    <div className="space-y-20">
       {glowing ? (
         <GlowingBg
           glowing="!-top-0"
-          className="py-40 text-center flex flex-col"
+          className="pt-40 text-center flex flex-col"
         >
           <SectionHeader
             smallTitle="Pricing"
@@ -26,10 +26,9 @@ export default function PricingSection({ glowing }) {
         <SectionHeader
           smallTitle="Pricing"
           largeTitle="Transparent Pricing Plans"
-          className="text-center mx-auto mb-20"
+          className="text-center mx-auto"
         />
       )}
-
       {/* FEATURES PLANS */}
       <div className="space-y-20">
         {/* TOGGLE PLAN BUTTONS */}
@@ -59,7 +58,7 @@ export default function PricingSection({ glowing }) {
           </AnimatePresence>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 // CARD

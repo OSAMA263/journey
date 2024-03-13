@@ -28,7 +28,7 @@ const Table = () => {
   }
 
   return (
-    <TableContainer>
+    <div>
       <SectionHeader
         smallTitle="Transparent Plans"
         largeTitle="Compare all available Plans"
@@ -75,7 +75,7 @@ const Table = () => {
           </div>
         ))}
       </div>
-    </TableContainer>
+    </div>
   );
 };
 const GridTable = tw.div`
@@ -96,8 +96,5 @@ ${({ $cells }) =>
     ? "[&>:not(:nth-child(1))]:flex [&>:not(:nth-child(1))]:justify-center"
     : ""}
     ${({ $icon }) => ($icon ? "[&>span]:text-white [&>span]:text-2xl" : "")}
-`;
-const TableContainer = tw.div`
-mt-40
 `;
 
