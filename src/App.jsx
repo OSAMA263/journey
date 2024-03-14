@@ -19,7 +19,7 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/features" element={<Features />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about-us" element={<About />} />
         </Routes>
       </Suspense>
       <Footer />

@@ -4,12 +4,16 @@ import { prices_cards, features } from "./data";
 import tw from "tailwind-styled-components";
 import { PiCheckCircle } from "react-icons/pi";
 import PricingSection from "../../components/PricingSection";
+import GetStarted from "../../components/GetStarted";
+import FAQS from "../../components/FAQS";
 
 export default function Pricing() {
   return (
     <LayoutPage>
       <PricingSection glowing/>
       <Table />
+      <FAQS/>
+      <GetStarted/>
     </LayoutPage>
   );
 }

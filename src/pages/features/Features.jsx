@@ -1,4 +1,3 @@
-import React from "react";
 import CardFeature from "../../components/CardFeature";
 import { SectionHeader } from "../../components/SectionHeader";
 import GlowingBg from "../../components/GlowingBg";
@@ -11,6 +10,9 @@ import pieChartImg from "/home/pie chart.webp";
 import tw from "tailwind-styled-components";
 import PricingSection from "../../components/PricingSection";
 import SlideElement from "../../shared/SlideElement";
+import FAQS from "../../components/FAQS";
+import Testimonial from "../../components/Testimonial";
+import GetStarted from "../../components/GetStarted";
 
 export default function Features() {
   return (
@@ -29,8 +31,8 @@ export default function Features() {
         />
         <TwoImages br smallImg={pieChartImg} bigImg={dashboardImg} />
       </SectionGrid>
-      {/* WERID SECTION GRID FOUR */}
-      <WeridGrid>
+      {/* WEIRD SECTION GRID FOUR */}
+      <WeirdGrid>
         {fourGrid.map((data, i) => (
           <SlideElement
             className={i === 0 ? "row-span-2" : i === 3 ? "col-span-2" : ""}
@@ -46,7 +48,7 @@ export default function Features() {
             </CardFeature>
           </SlideElement>
         ))}
-      </WeridGrid>
+      </WeirdGrid>
       <SectionGrid className="grid-cols-[1fr_1.25fr]">
         <TwoImages br smallImg={pieChartImg} bigImg={dashboardImg} />
         <SectionHeader
@@ -55,11 +57,14 @@ export default function Features() {
         />
       </SectionGrid>
       <PricingSection />
+      <Testimonial/>
+      <FAQS/>
+      <GetStarted/>
     </LayoutPage>
   );
 }
 
-const WeridGrid = tw.div`
+const WeirdGrid = tw.div`
 grid
 grid-cols-3
 grid-rows-2

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export default function Contact() {
   return (
     <LayoutPage>
-      <GlowingBg glwoing="!top-0" className="grid grid-cols-2 gap-x-20">
+      <GlowingBg glowing="!top-0 !bg-opacity-25" className="grid grid-cols-2 gap-x-20 items-center pt-40">
         <div className="space-y-10">
           <SectionHeader
             smallTitle="Contact Us"
@@ -19,6 +19,7 @@ export default function Contact() {
           {/* FORM IPUTS */}
           <Form />
         </div>
+        <img src="/about hero.webp" alt="hero img" className="rounded-xl" />
       </GlowingBg>
       <FAQS />
       <GetStarted />
@@ -28,25 +29,28 @@ export default function Contact() {
 const Form = () => {
   return (
     <div className="space-y-4">
-      <form className="flex gap-4 items-stretch">
-        <div>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-        </div>
-        <div>
-          <input type="number" placeholder="Phone Number" />
-          <select>
-            <option>Company Size</option>
-            <option value="">12</option>
-            <option value="">12</option>
-            <option value="">12</option>
-          </select>
-        </div>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <MainBtn type="submit">Submit</MainBtn>
-      </form>
-      <p>
-        By submitting this Form you confirm that you’ve rea and agree to our
+      <FormContainer>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="number" placeholder="Phone Number" />
+        <select>
+          <option>Company Size</option>
+          <option value="">12</option>
+          <option value="">12</option>
+          <option value="">12</option>
+        </select>
+        <textarea
+          className="col-span-2"
+          name=""
+          id=""
+          rows="5" placeholder="How can we help ypu?"
+        ></textarea>
+        <MainBtn className="col-span-2 py-3" type="submit">
+          Submit
+        </MainBtn>
+      </FormContainer>
+      <p className="text-base">
+        By submitting this Form you confirm that you’ve rea and agree to our{" "}
         <Link className="text-yellow-color hover hover:text-white">
           Terms & Conditions.
         </Link>
@@ -55,3 +59,7 @@ const Form = () => {
   );
 };
 
+const FormContainer = tw.form`
+grid grid-cols-2
+gap-4
+`;

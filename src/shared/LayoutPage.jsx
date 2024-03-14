@@ -9,5 +9,5 @@ export default function LayoutPage({children,className}) {
 const Wrapper=tw.div`
 w-[65%]
 mx-auto
-space-y-64
+space-y-60
 `
