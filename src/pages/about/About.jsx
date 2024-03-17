@@ -12,7 +12,7 @@ import { jobs, team } from "./data";
 export default function About() {
   return (
     <LayoutPage>
-      <GlowingBg glowing="top-0" className="space-y-20">
+      <GlowingBg glowing="!-top-1/2 !blur-[200px] !bg-opacity-75 " className="space-y-20">
         <SectionGrid className="grid-cols-[1.25fr_1fr] pt-40">
           <SectionHeader
             smallTitle="About Us"
@@ -22,18 +22,18 @@ export default function About() {
         </SectionGrid>
       </GlowingBg>
       <AutoSlider />
-      {/* OUT CUSTOMERS */}
+      {/* OUT FOURS CARDS GRID CUSTOMERS */}
       <SlideElement className="space-y-20 bg-dots text-balance text-center !mt-32">
         <h1>We create automated Processes that enhance Global Companies</h1>
-        <div className="grid grid-cols-4 text-start gap-8">
+        <div className="grid md:grid-cols-4 text-start gap-8">
           {Array.from({ length: 4 }).map((_, i) => (
             <SlideElement
               i={i}
               key={i}
-              className="p-8 rounded-2xl border border-light-gray space-y-10"
+              className="p-8 rounded-2xl border border-light-gray space-y-4"
             >
-              <h1>6M</h1>
-              <span>Customers Genrated</span>
+              <h2 className="text-xl">6M</h2>
+              <p>Customers Genrated</p>
             </SlideElement>
           ))}
         </div>
@@ -46,11 +46,11 @@ export default function About() {
           className="text-center mx-auto"
         />
         {/* CARDS team */}
-        <div className="grid grid-cols-3 gap-x-20">
+        <div className="grid md:grid-cols-3 gap-20">
           {team.map(({ img, name, position, description, socials }, i) => (
             <div className="space-y-6 text-center" key={i}>
-              <SlideElement className="rounded-2xl overflow-hidden w-[90%] mx-auto">
-                <img src={img} className=" hover:scale-110 w-full" alt={name} />
+              <SlideElement className="rounded-2xl overflow-hidden w-[90%] max-md:w-1/2 mx-auto">
+                <img src={img} className="hover:scale-110 w-full" alt={name} />
               </SlideElement>
               <SlideElement>
                 <h6>{name}</h6>
@@ -88,14 +88,14 @@ const JobOffers = () => {
   return (
     <GlowingBg
       glowing="!bg-opacity-15"
-      className="space-y-8 !mt-20 w-[69%] mx-auto"
+      className="space-y-8 !mt-20 sm:w-[69%] mx-auto"
     >
       {jobs.map(({ role, location, description }, i) => (
         <SlideElement key={i}>
           <JobCard>
             <div className="flex justify-between">
               <div>
-                <h2>{role}</h2>
+                <h2 className="text-xl text-yellow-color">{role}</h2>
                 <span>{location}</span>
               </div>
               <MainBtn>Apply Now</MainBtn>
@@ -115,7 +115,6 @@ transition-all
 duration-300
 p-2
 text-black
-text-xl
 cursor-pointer
 border-yellow-color
 bg-yellow-color
@@ -125,7 +124,7 @@ hover:scale-110
 `;
 
 const JobCard = tw.div`
-space-y-16
+space-y-8
 border
 cursor-pointer
 rounded-2xl

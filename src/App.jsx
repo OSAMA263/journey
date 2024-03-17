@@ -3,6 +3,7 @@ import Home from "./pages/home/Home";
 import { Suspense, lazy, useEffect } from "react";
 import Navbar from "./shared/Navbar";
 import Footer from "./shared/Footer";
+import Loader from "./shared/Loader";
 
 function App() {
   // make a page progress bar under the navbar
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<span>loading</span>}>
+      <Suspense fallback={<Loader />}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/pricing" element={<Pricing />} />

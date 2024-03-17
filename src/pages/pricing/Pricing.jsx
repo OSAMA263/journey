@@ -6,14 +6,15 @@ import { PiCheckCircle } from "react-icons/pi";
 import PricingSection from "../../components/PricingSection";
 import GetStarted from "../../components/GetStarted";
 import FAQS from "../../components/FAQS";
+import MainBtn from "../../components/MainBtn";
 
 export default function Pricing() {
   return (
     <LayoutPage>
-      <PricingSection glowing/>
+      <PricingSection glowing />
       <Table />
-      <FAQS/>
-      <GetStarted/>
+      <FAQS />
+      <GetStarted />
     </LayoutPage>
   );
 }
@@ -40,36 +41,37 @@ const Table = () => {
       />
       {/* GRID TABLE */}
       <div className="mt-20">
-        <GridTable className="sticky top-0 bg-black-color">
-          <div></div>
+        <GridTable className="sticky top-0 bg-black-color max-md:grid-cols-3">
+          <div className="max-md:hidden"></div>
           {prices_cards.map(({ title, description, price }, i) => (
-            <div className="p-6" key={i}>
+            <div className="lg:p-6 p-3 space-y-2" key={i}>
               <h6>{title}</h6>
-              <h1 className="text-4xl">
+              <h2 className="text-3xl">
                 ${price.monthly}
                 <span className="text-[#9ea0a9] text-base">/mo</span>
-              </h1>
+              </h2>
               <p>{description.slice(0, 100)}</p>
-              <button className="glowing-btn py-3 mt-6 w-full">
-                Get Started
-              </button>
+              <MainBtn className="w-full !mt-8" />
             </div>
           ))}
         </GridTable>
         {/* TABLE WITH FEATURES */}
         {features.map(({ title, featuresInfo }, i) => (
           <div className="mt-6" key={i}>
-            <h2 className="font-bold text-2xl p-4">{title}</h2>
+            <h2 className="font-bold text-xl p-4 max-md:text-center">
+              {title}
+            </h2>
             {featuresInfo.map(({ featureTitle, cell1, cell2, cell3 }, j) => (
               <div
                 className={`border-light-gray ${j == 0 ? "border-t" : ""}`}
                 key={j}
               >
                 <GridTable
+                  className="max-md:grid-rows-2 max-md:grid-cols-3"
                   $icon={(cell1 || cell2 || cell3) === "check"}
                   $cells={true}
                 >
-                  <h2>{featureTitle}</h2>
+                  <h2 className="max-md:col-span-3 max-md:text-center">{featureTitle}</h2>
                   <span>{featureCell(cell1)}</span>
                   <span>{featureCell(cell2)}</span>
                   <span>{featureCell(cell3)}</span>
@@ -92,13 +94,11 @@ border-light-gray
 [&>span]:p-4
 [&>span]:text-lg
 [&>h2]:p-4
-[&>h2]:text-lg
 [&>h2]:text-gray-color
 [&>span]:font-semibold
 ${({ $cells }) =>
   $cells
     ? "[&>:not(:nth-child(1))]:flex [&>:not(:nth-child(1))]:justify-center"
     : ""}
-    ${({ $icon }) => ($icon ? "[&>span]:text-white [&>span]:text-2xl" : "")}
+    ${({ $icon }) => ($icon ? "[&>span]:text-white [&>span]:text-xl" : "")}
 `;
-

@@ -30,10 +30,10 @@ export default function PricingSection({ glowing }) {
         />
       )}
       {/* FEATURES PLANS */}
-      <div className="space-y-20">
+      <div className="sm:space-y-20 space-y-10">
         {/* TOGGLE PLAN BUTTONS */}
         <SlideElement>
-          <div className="toggle-plan-btns text-xl">
+          <div className="toggle-plan-btns sm:text-xl">
             {plans.map((plan) => (
               <div key={plan}>
                 <button
@@ -48,7 +48,7 @@ export default function PricingSection({ glowing }) {
           </div>
         </SlideElement>
         {/* cards */}
-        <div className="grid grid-cols-3 gap-16">
+        <div className="max-lg:w-1/2 max-sm:w-[80%] mx-auto grid lg:grid-cols-3 gap-16">
           <AnimatePresence key={featurePlan}>
             {prices_cards.map((data, i) => (
               <SlideElement y="10%" i={i} key={i}>
@@ -68,10 +68,10 @@ const Card = ({ data, featurePlan }) => {
     <CardContainer>
       <div>
         <h6>{title}</h6>
-        <h1 className="text-4xl">
+        <h2 className="text-4xl">
           ${price[featurePlan]}
-          <span className="text-[#9ea0a9]">/{featurePlan}</span>
-        </h1>
+          <span className="text-gray-color">/{featurePlan}</span>
+        </h2>
         <p>{description}</p>
       </div>
       {/* FEATURES Cards-------- */}
@@ -113,6 +113,6 @@ duration-500
 [&>div]:p-10
 [&>div]:flex 
 [&>div]:flex-col
-[&>div]:gap-4
+[&>div]:gap-2
 [&>div]:!items-stretch
 `;

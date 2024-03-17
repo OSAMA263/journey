@@ -13,13 +13,13 @@ import {
 
 export default function Footer() {
   return (
-    <LayoutPage className={"mt-20"}>
+    <LayoutPage className={"mt-20 !pt-0"}>
       <footer className="bg-dots">
         <FooterWrapper>
-          <div className="space-y-4">
+          <div className="space-y-4 max-lg:col-span-3">
             <NavLink
               to="/"
-              className="w-fit [&>span]:hover:-rotate-[135deg] hover:scale-75 flex gap-2"
+              className="w-fit [&>span]:hover:-rotate-[135deg] hover:scale-90 flex gap-2"
             >
               <span className="duration-500  text-2xl transition-all text-white">
                 <PiCirclesFourFill />
@@ -32,6 +32,7 @@ export default function Footer() {
             <InputGroup>
               <input
                 type="email"
+                name="email"
                 placeholder="enter ur email"
                 className="pe-36"
               />
@@ -49,17 +50,19 @@ export default function Footer() {
           </div>
           {links.map(({ title, links }) => (
             <ul key={title}>
-              {title}
+              <h2 className="text-yellow-color mb-6">{title}</h2>
               {links.map(({ label, url }) => (
                 <li key={label}>
-                  {String(url) ? (
-                    <span>
+                  {typeof url === "string" ? (
+                    <span className="[&>a]:hover:text-yellow-color">
                       <NavLink to={url}>{label}</NavLink>
                     </span>
                   ) : (
-                    <span className="flex">
-                      {url}
-                      {label}
+                    <span className="[&>a]:hover:text-yellow-color">
+                      <span></span>
+                      <NavLink to="" className="flex gap-x-2">
+                        {url} {label}
+                      </NavLink>
                     </span>
                   )}
                 </li>
@@ -67,10 +70,11 @@ export default function Footer() {
             </ul>
           ))}
         </FooterWrapper>
-        <div className="w-full flex justify-between py-8">
+        <div className="w-full flex max-sm:flex-col justify-between py-8">
           <span>osam263</span>
-          <span>
-            Developed By <h6>OSAMA263</h6>
+          <span className="flex">
+            Developed By {"\u00A0"}
+            <h6>OSAMA263</h6>
           </span>
           <h6>Terms & Conditions</h6>
         </div>
@@ -81,7 +85,11 @@ export default function Footer() {
 const FooterWrapper = tw.div`
 grid
 grid-cols-[1.60fr_repeat(3,minmax(0,1fr))]
-gap-x-10
+max-lg:grid-rows-2
+max-lg:grid-cols-2
+mx-auto
+sm:gap-20
+max-sm:gap-y-20
 py-20
 border-b
 border-light-gray
@@ -106,7 +114,7 @@ const links = [
   {
     title: "socials",
     links: [
-      { label: "X", url: <FaXTwitter /> },
+      { label: "Twitter", url: <FaXTwitter /> },
       { label: "Facebook", url: <FaFacebookF /> },
       { label: "Youtube", url: <FaYoutube /> },
       { label: "LinkedIn", url: <FaLinkedinIn /> },

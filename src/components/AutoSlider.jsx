@@ -44,7 +44,7 @@ export default function AutoSlider() {
       <Swiper {...swiperProps}>
         {logos.map((src, i) => (
           <SwiperSlide key={i}>
-            <img className="w-40" src={src} alt={src} />
+            <img className="xl:w-40 md:w-36 w-24" src={src} alt={src} />
           </SwiperSlide>
         ))}
       </Swiper>

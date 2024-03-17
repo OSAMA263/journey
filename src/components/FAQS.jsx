@@ -13,7 +13,7 @@ export default function FAQS() {
         className="mx-auto text-center"
       />
       <MainBtn>Contact</MainBtn>
-      <GlowingBg className="w-[60%]" glowing="!bg-opacity-15">
+      <GlowingBg className="lg:w-[60%] w-[89%]" glowing="!bg-opacity-15">
         <Accordions data={FAQ} />
       </GlowingBg>
     </div>

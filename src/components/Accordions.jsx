@@ -25,16 +25,18 @@ export default function Accordions({ data }) {
                 _hover={{ borderColor: "#f8f858" }}
                 p={6}
               >
-                <div className="flex justify-between w-full text-2xl">
+                <div className="flex justify-between w-full text-xl">
                   <h4 className="flex gap-x-4">
-                    {icon && <span className="text-yellow-color">{icon}</span>}
+                    {icon && (
+                      <span className="text-yellow-color text-2xl">{icon}</span>
+                    )}
                     {title}
                   </h4>
 
                   <span
                     className={`${
                       isExpanded ? "-rotate-180" : "rotate-0"
-                    } translate-all duration-500`}
+                    } translate-all duration-500 text-2xl`}
                   >
                     <PiCaretUpDuotone />
                   </span>

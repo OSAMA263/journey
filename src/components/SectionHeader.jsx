@@ -1,10 +1,11 @@
+import tw from "tailwind-styled-components";
 import SlideElement from "../shared/SlideElement";
 
 export const SectionHeader = (props) => {
   const { largeTitle, smallTitle, className } = props;
 
   return (
-    <div className={`${className ?? ""} space-y-1 text-pretty w-[80%]`}>
+    <Container className={className??""}>
       <SlideElement>
         <h6 className="text-yellow-color">{smallTitle}</h6>
       </SlideElement>
@@ -12,12 +13,19 @@ export const SectionHeader = (props) => {
         <h1>{largeTitle}</h1>
       </SlideElement>
       <SlideElement>
-        <p className="text-lg">
+        <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
           temporibus ipsum porro quidem laborum harum esse consequuntur quo
           ipsam eum.
         </p>
       </SlideElement>
-    </div>
+    </Container>
   );
 };
+
+const Container=tw.div`
+space-y-6
+text-pretty
+w-[78%]
+max-lg:mx-auto
+`

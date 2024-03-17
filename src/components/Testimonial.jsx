@@ -21,7 +21,7 @@ export default function Testimonial() {
         {Array.from({ length: 3 }).map((_, i) => (
           <SwiperSlide key={i}>
             <div className="space-y-4 flex flex-col w-[80%] text-center mx-auto">
-              <h1>“An Amazing Service that covered all the bases”</h1>
+              <h2 className="sm:text-4xl text-3xl">“An Amazing Service that covered all the bases”</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
                 commodi adipisci suscipit totam eius, pariatur iusto? Aliquid
@@ -68,7 +68,7 @@ top-1/2
 [&_button]:bg-light-gray
 [&_button:hover]:bg-yellow-color
 [&_button:hover]:text-black
-[&_button]:p-4
+[&_button]:p-3
 [&_button]:text-2xl
 [&_button]:rounded-full
 `;

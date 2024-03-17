@@ -16,7 +16,7 @@ import FAQS from "../../components/FAQS";
 import MainBtn from "../../components/MainBtn";
 import Testimonial from "../../components/Testimonial";
 import GetStarted from "../../components/GetStarted";
-import PricingSection from "../../components/PricingSection"
+import PricingSection from "../../components/PricingSection";
 
 export default function Home() {
   return (
@@ -27,24 +27,26 @@ export default function Home() {
         overflowHidden
         className="h-dvh flex flex-col"
       >
-        <SectionGrid className="grid-cols-[1.25fr_1fr] my-0 bg-dots">
-          <div className="space-y-2">
+        <SectionGrid className="grid-cols-[1.25fr_1fr] bg-dots !content-center">
+          <SlideElement className="space-y-2">
             <button className="px-4 py-1 border border-light-gray hover:shadow-[0px_0px_5px_1px_white] rounded-3xl">
               Book your Free Consultation Call
             </button>
             <h1>
-              Explore new
-              <span className="underline text-yellow-color">Workflows</span> for
-              better Productivity
+              Explore new{"\u00A0"}
+              <small className="underline text-yellow-color">
+                Workflows
+              </small>{" "}
+              for better Productivity
             </h1>
             <p className="font-semibold">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
               odio?
             </p>
             <TwoBtnsGroup />
-          </div>
+          </SlideElement>
           {/* image  */}
-          <div className="relative">
+          <SlideElement className="relative max-lg:mx-auto max-xl:w-[90%] max-lg:w-[60%]">
             <div className="rounded-xl overflow-hidden">
               <img
                 src="/home/home hero.webp"
@@ -53,19 +55,19 @@ export default function Home() {
               />
               <img
                 src="/home/home shape1.svg"
-                className="absolute top-full -translate-y-1/2 right-full translate-x-1/2"
+                className="absolute w-[20%] top-full -translate-y-1/2 right-full translate-x-1/2"
                 alt="shape1"
               />
               <img
                 src="/home/home shape2.svg"
-                className="absolute bottom-full translate-y-1/2 left-full -translate-x-1/2"
+                className="absolute w-[20%] bottom-full translate-y-1/2 left-full -translate-x-1/2"
                 alt="shape2"
               />
             </div>
-          </div>
+          </SlideElement>
         </SectionGrid>
         {/* AUTO SLIDER LOGOS */}
-        <AutoSlider />
+        <AutoSlider/>
       </GlowingBg>
       {/* THREE COLUMNS SECTION */}
       <SectionGrid className="space-y-16 text-center">
@@ -76,7 +78,7 @@ export default function Home() {
         />
         <GlowingBg
           glowing="!bg-opacity-35"
-          className="grid grid-cols-3 gap-x-10"
+          className="grid lg:grid-cols-3 sm:gap-10 gap-4 lg:w-1/2 mx-auto" 
         >
           {threeCols.map((data, i) => (
             <SlideElement key={i} i={i}>
@@ -87,7 +89,7 @@ export default function Home() {
       </SectionGrid>
       {/* FOURS CARDFeatureS GRID SECTION */}
       <SectionGrid className="grid-cols-[1.25fr_1fr]">
-        <div>
+        <div className="max-lg:order-1">
           <SectionHeader
             smallTitle="Features"
             largeTitle="AI Driven Statistics"
@@ -136,9 +138,9 @@ export default function Home() {
         <TwoImages br bigImg={dashboardImg} smallImg={trafficChartImg} />
       </SectionGrid>
       {/*  */}
-      <GetStarted/>
-      <PricingSection/>
-      <Testimonial/>
+      <GetStarted />
+      <PricingSection />
+      <Testimonial />
       <FAQS />
     </LayoutPage>
   );
@@ -160,11 +162,16 @@ flex
 font-semibold
 !mt-12
 gap-x-6
-[&_button]:text-lg
+max-lg:justify-center
 `;
 export const SectionGrid = tw.div`
 grid
-gap-x-16
+2xl:gap-x-16
+max-lg:grid-cols-1
+gap-x-4
+gap-y-10
 items-center
 h-full
+max-lg:items-center
+max-lg:text-center
 `;

@@ -23,11 +23,12 @@ export default function Features() {
           largeTitle="Boost your Productivity & drive more Sales"
         />
       </GlowingBg>
-      {/* AI SECTION WITH IMAGES */}
+      {/* FIRST SECTION WITH IMAGES */}
       <SectionGrid className="grid-cols-[1.25fr_1fr]">
         <SectionHeader
           smallTitle="Productivity"
           largeTitle="AI Driven Statistics"
+          className="max-lg:order-1"
         />
         <TwoImages br smallImg={pieChartImg} bigImg={dashboardImg} />
       </SectionGrid>
@@ -35,7 +36,13 @@ export default function Features() {
       <WeirdGrid>
         {fourGrid.map((data, i) => (
           <SlideElement
-            className={i === 0 ? "row-span-2" : i === 3 ? "col-span-2" : ""}
+            className={
+              i === 0
+                ? "lg:row-span-2 max-lg:col-span-2"
+                : i === 3
+                ? "col-span-2"
+                : ""
+            }
             key={i}
           >
             <CardFeature border data={data}>
@@ -57,17 +64,19 @@ export default function Features() {
         />
       </SectionGrid>
       <PricingSection />
-      <Testimonial/>
-      <FAQS/>
-      <GetStarted/>
+      <Testimonial />
+      <FAQS />
+      <GetStarted />
     </LayoutPage>
   );
 }
 
 const WeirdGrid = tw.div`
 grid
-grid-cols-3
-grid-rows-2
-gap-10
+lg:grid-cols-3
+grid-cols-2
+lg:grid-rows-2
+lg:gap-10
+gap-2
 my-32
 `;

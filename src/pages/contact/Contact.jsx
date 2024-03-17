@@ -6,20 +6,23 @@ import GetStarted from "../../components/GetStarted";
 import tw from "tailwind-styled-components";
 import MainBtn from "../../components/MainBtn";
 import { Link } from "react-router-dom";
+import { SectionGrid } from "../home/Home";
 
 export default function Contact() {
   return (
     <LayoutPage>
-      <GlowingBg glowing="!top-0 !bg-opacity-25" className="grid grid-cols-2 gap-x-20 items-center pt-40">
-        <div className="space-y-10">
-          <SectionHeader
-            smallTitle="Contact Us"
-            largeTitle="Get in Touch with our Team of Experts"
-          />
-          {/* FORM IPUTS */}
-          <Form />
-        </div>
-        <img src="/about hero.webp" alt="hero img" className="rounded-xl" />
+      <GlowingBg glowing="!-top-1/2 !bg-opacity-25">
+        <SectionGrid className="lg:grid-cols-2 gap-20 pt-40">
+          <div className="space-y-10">
+            <SectionHeader
+              smallTitle="Contact Us"
+              largeTitle="Get in Touch with our Team of Experts"
+            />
+            {/* FORM IPUTS */}
+            <Form />
+          </div>
+          <img src="/about hero.webp" alt="hero img" className="rounded-xl" />
+        </SectionGrid>
       </GlowingBg>
       <FAQS />
       <GetStarted />
@@ -30,20 +33,20 @@ const Form = () => {
   return (
     <div className="space-y-4">
       <FormContainer>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <input type="number" placeholder="Phone Number" />
-        <select>
+        <input name="user name" type="text" placeholder="Name" />
+        <input name="email address" type="email" placeholder="Email" />
+        <input name="phone numebr" type="number" placeholder="Phone Number" />
+        <select name="company size">
           <option>Company Size</option>
-          <option value="">12</option>
-          <option value="">12</option>
-          <option value="">12</option>
+          <option value="">20+</option>
+          <option value="">40+</option>
+          <option value="">60+</option>
         </select>
         <textarea
           className="col-span-2"
-          name=""
-          id=""
-          rows="5" placeholder="How can we help ypu?"
+          name="message"
+          rows="5"
+          placeholder="How can we help ypu?"
         ></textarea>
         <MainBtn className="col-span-2 py-3" type="submit">
           Submit
@@ -61,5 +64,5 @@ const Form = () => {
 
 const FormContainer = tw.form`
 grid grid-cols-2
-gap-4
+gap-3
 `;

@@ -4,11 +4,13 @@ export default function CardFeature(props) {
   const { border, data, children, className } = props;
   return (
     <Container className={className} $border={border}>
-      <div className="px-10 py-14 space-y-6 text-start text-lg font-semibold">
-        <div className="p-5 border border-light-gray rounded-2xl w-fit">
-          <span className="text-3xl text-yellow-color ">{data.icon}</span>
+      <div className="space-y-6 text-start text-lg font-semibold">
+        <div className="sm:p-5 p-2 border border-light-gray sm:rounded-2xl rounded-lg w-fit">
+          <span className="sm:text-3xl text-xl text-yellow-color ">
+            {data.icon}
+          </span>
         </div>
-        <div className="space-y-1">
+        <div className="space-y-3 font-normal">
           <h3>{data.title}</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
@@ -23,7 +25,20 @@ export default function CardFeature(props) {
 const Container = tw.div`
 ${({ $border }) =>
   $border
-    ? "border rounded-2xl hover:border-yellow-color bg-black-color bg-opacity-25 cursor-pointer border-light-gray border-opacity-50 transition-all duration-500"
+    ? `
+    border 
+    rounded-2xl
+    hover:border-yellow-color
+    bg-black-color
+    bg-opacity-25
+    cursor-pointer
+    border-light-gray 
+    border-opacity-50
+    [&>div]:sm:p-12
+    [&>div]:p-8
+    transition-all
+    duration-500
+    `
     : ""}
     w-full
     h-full
