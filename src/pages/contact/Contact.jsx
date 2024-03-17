@@ -21,7 +21,7 @@ export default function Contact() {
             {/* FORM IPUTS */}
             <Form />
           </div>
-          <img src="/about hero.webp" alt="hero img" className="rounded-xl" />
+          <img src="about hero.webp" alt="hero img" className="rounded-xl" />
         </SectionGrid>
       </GlowingBg>
       <FAQS />

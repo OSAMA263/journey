@@ -49,17 +49,17 @@ export default function Home() {
           <SlideElement className="relative max-lg:mx-auto max-xl:w-[90%] max-lg:w-[60%]">
             <div className="rounded-xl overflow-hidden">
               <img
-                src="/home/home hero.webp"
+                src="home/home hero.webp"
                 className="z-10 relative"
                 alt="hero"
               />
               <img
-                src="/home/home shape1.svg"
+                src="home/home shape1.svg"
                 className="absolute w-[20%] top-full -translate-y-1/2 right-full translate-x-1/2"
                 alt="shape1"
               />
               <img
-                src="/home/home shape2.svg"
+                src="home/home shape2.svg"
                 className="absolute w-[20%] bottom-full translate-y-1/2 left-full -translate-x-1/2"
                 alt="shape2"
               />
@@ -78,7 +78,7 @@ export default function Home() {
         />
         <GlowingBg
           glowing="!bg-opacity-35"
-          className="grid lg:grid-cols-3 sm:gap-10 gap-4 lg:w-1/2 mx-auto" 
+          className="grid lg:grid-cols-3 sm:gap-10 gap-4 mx-auto" 
         >
           {threeCols.map((data, i) => (
             <SlideElement key={i} i={i}>

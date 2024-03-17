@@ -29,7 +29,7 @@ export default function Testimonial() {
               </p>
               <div className="flex flex-col">
                 <img
-                  src="/avatar.jpg"
+                  src="avatar.jpg"
                   alt="avatar"
                   className="size-16 rounded-full"
                 />

@@ -18,7 +18,7 @@ export default function About() {
             smallTitle="About Us"
             largeTitle="A Company you can place your Trust in"
           />
-          <img src="/about hero.webp" alt="hero img" className="rounded-xl" />
+          <img src="about hero.webp" alt="hero img" className="rounded-xl" />
         </SectionGrid>
       </GlowingBg>
       <AutoSlider />
