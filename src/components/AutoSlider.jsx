@@ -39,7 +39,7 @@ export default function AutoSlider() {
     logo5,
   ];
   return (
-    <SlideElement className="auto-slider">
+    <SlideElement className="auto-slider !my-20">
       <div className="absolute w-full h-full bg-black-color bg-opacity-40 z-40"></div>
       <Swiper {...swiperProps}>
         {logos.map((src, i) => (

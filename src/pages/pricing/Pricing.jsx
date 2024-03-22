@@ -41,7 +41,7 @@ const Table = () => {
       />
       {/* GRID TABLE */}
       <div className="mt-20">
-        <GridTable className="sticky top-0 bg-black-color max-md:grid-cols-3">
+        <GridTable className="sm:sticky top-0 bg-black-color max-md:grid-cols-3 max-sm:grid-cols-1">
           <div className="max-md:hidden"></div>
           {prices_cards.map(({ title, description, price }, i) => (
             <div className="lg:p-6 p-3 space-y-2" key={i}>
@@ -86,7 +86,7 @@ const Table = () => {
 };
 const GridTable = tw.div`
 grid
-grid-cols-4
+md:grid-cols-4
 divide-x
 divide-light-gray
 border-b

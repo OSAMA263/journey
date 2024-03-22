@@ -67,8 +67,8 @@ export default function Home() {
           </SlideElement>
         </SectionGrid>
         {/* AUTO SLIDER LOGOS */}
-        <AutoSlider/>
       </GlowingBg>
+        <AutoSlider/>
       {/* THREE COLUMNS SECTION */}
       <SectionGrid className="space-y-16 text-center">
         <SectionHeader
