@@ -1,4 +1,3 @@
-import React from "react";
 import Accordions from "./Accordions";
 import { SectionHeader } from "./SectionHeader";
 import GlowingBg from "./GlowingBg";

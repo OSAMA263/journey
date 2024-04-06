@@ -48,11 +48,17 @@ export default function Home() {
           {/* image  */}
           <SlideElement className="relative max-lg:mx-auto max-xl:w-[90%] max-lg:w-[60%]">
             <div className="rounded-xl overflow-hidden">
-              <img
-                src="home/home hero.webp"
-                className="z-10 relative"
-                alt="hero"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet="home/home hero.webp"
+                />
+                <img
+                  src="home/small home hero.webp"
+                  className="z-10 relative"
+                  alt="starter images"
+                />
+              </picture>
               <img
                 src="home/home shape1.svg"
                 className="absolute w-[20%] top-full -translate-y-1/2 right-full translate-x-1/2"
@@ -68,7 +74,7 @@ export default function Home() {
         </SectionGrid>
         {/* AUTO SLIDER LOGOS */}
       </GlowingBg>
-        <AutoSlider/>
+      <AutoSlider />
       {/* THREE COLUMNS SECTION */}
       <SectionGrid className="space-y-16 text-center">
         <SectionHeader
@@ -78,7 +84,7 @@ export default function Home() {
         />
         <GlowingBg
           glowing="!bg-opacity-35"
-          className="grid lg:grid-cols-3 sm:gap-10 gap-4 mx-auto" 
+          className="grid lg:grid-cols-3 sm:gap-10 gap-4 mx-auto"
         >
           {threeCols.map((data, i) => (
             <SlideElement key={i} i={i}>

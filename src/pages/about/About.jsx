@@ -95,7 +95,7 @@ const JobOffers = () => {
           <JobCard>
             <div className="flex justify-between">
               <div>
-                <h2 className="text-xl text-yellow-color">{role}</h2>
+                <span className="text-xl block text-yellow-color">{role}</span>
                 <span>{location}</span>
               </div>
               <MainBtn>Apply Now</MainBtn>

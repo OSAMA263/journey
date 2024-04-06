@@ -39,6 +39,9 @@ body {
     color: $gray-color;
   }
   img {
+    &:not([src$=".svg"]) {
+      aspect-ratio: 1/.7;
+    }
     max-width: 100%;
     object-fit: cover;
   }
@@ -110,6 +113,9 @@ body {
     left: 0;
     z-index: -10;
     background-repeat: no-repeat;
+    @media screen and (max-width: 1024px) {
+      background-image: url("/home/small bg dots.svg");
+    }
     background-image: url("/home/bg dots.svg");
     background-position: center;
     opacity: 0.6;

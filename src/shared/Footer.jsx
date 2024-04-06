@@ -10,6 +10,7 @@ import {
   FaYoutube,
   FaXTwitter,
 } from "react-icons/fa6";
+import { Fragment } from "react";
 
 export default function Footer() {
   return (
@@ -49,25 +50,27 @@ export default function Footer() {
             </p>
           </div>
           {links.map(({ title, links }) => (
-            <ul key={title}>
+            <div key={title}>
               <h2 className="text-yellow-color mb-6">{title}</h2>
-              {links.map(({ label, url }) => (
-                <li key={label}>
-                  {typeof url === "string" ? (
-                    <span className="[&>a]:hover:text-yellow-color">
-                      <NavLink to={url}>{label}</NavLink>
-                    </span>
-                  ) : (
-                    <span className="[&>a]:hover:text-yellow-color">
-                      <span></span>
-                      <NavLink to="" className="flex gap-x-2">
-                        {url} {label}
-                      </NavLink>
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
+              <ul>
+                {links.map(({ label, url }) => (
+                  <li key={label}>
+                    {typeof url === "string" ? (
+                      <span className="[&>a]:hover:text-yellow-color">
+                        <NavLink to={url}>{label}</NavLink>
+                      </span>
+                    ) : (
+                      <span className="[&>a]:hover:text-yellow-color">
+                        <span></span>
+                        <NavLink to="" className="flex gap-x-2">
+                          {url} {label}
+                        </NavLink>
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </FooterWrapper>
         <div className="w-full flex max-sm:flex-col justify-between py-8">

@@ -15,6 +15,7 @@ export default function TwoImages(props) {
             className="h-full w-full rounded-2xl"
             src={bigImg}
             alt={bigImg}
+            loading="lazy"
           />
         </SlideElement>
         <SlideElement
