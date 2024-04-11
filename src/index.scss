@@ -39,10 +39,7 @@ body {
     color: $gray-color;
   }
   img {
-    &:not([src$=".svg"]) {
-      aspect-ratio: 1/.7;
-    }
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
   }
   h1,
