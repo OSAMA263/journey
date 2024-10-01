@@ -25,7 +25,7 @@ export default function Home() {
       <GlowingBg
         glowing="!-top-[30%]"
         overflowHidden
-        className="h-dvh flex flex-col"
+        className="h-dvh lg:flex flex-col"
       >
         <SectionGrid className="grid-cols-[1.25fr_1fr] bg-dots !content-center">
           <SlideElement className="space-y-2">
