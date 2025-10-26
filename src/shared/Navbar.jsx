@@ -47,7 +47,7 @@ export default function Navbar() {
             <span className="text-2xl duration-500  transition-all text-white">
               <PiCirclesFourFill />
             </span>
-            Logo?
+            Journey
           </NavLink>
           {!SM_DEVICE && (
             <>
